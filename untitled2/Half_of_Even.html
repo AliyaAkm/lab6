@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Extract First Half of Even String</title>
+    <style>
+        .navbar {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-nav .nav-link {
+            color: #555 !important;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #007bff !important;
+        }
+        .content {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+        <a class="navbar-brand" href="#">Java Script</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Calculator.html">Calculator</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Largest_Number.html">Largest Number</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Triple_Sum.html">Triple Sum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Closest_Value.html">Closest Value</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Half_of_Even.html">Half of Even</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="content">
+    <h1>Extract First Half of Even-Length String</h1>
+    <p>Enter a string:</p>
+    <input type="text" id="inputString" placeholder="Enter your string">
+    <button onclick="getFirstHalf()">Extract First Half</button>
+    <p id="result"></p>
+</div>
+
+<script>
+    function first_half(str) {
+        if (str.length % 2 === 0) {
+            return str.slice(0, str.length / 2);
+        } else {
+            return "String length is odd. Cannot extract the first half.";
+        }
+    }
+
+    function getFirstHalf() {
+        const input = document.getElementById('inputString').value;
+        const result = first_half(input);
+        document.getElementById('result').innerText = "First half: " + result;
+    }
+
+    console.log(first_half("Python"));
+    console.log(first_half("JavaScript"));
+    console.log(first_half("PHP"));
+</script>
+</body>
+</html>
